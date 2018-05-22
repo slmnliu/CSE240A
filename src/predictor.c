@@ -11,9 +11,9 @@
 //
 // TODO:Student Information
 //
-const char *studentName = "NAME";
-const char *studentID   = "PID";
-const char *email       = "EMAIL";
+const char *studentName = "Solomon Liu";
+const char *studentID   = "A12920758";
+const char *email       = "smliu@ucsd.edu";
 
 //------------------------------------//
 //      Predictor Configuration       //
@@ -37,6 +37,9 @@ int verbose;
 //TODO: Add your own Branch Predictor data structures here
 //
 
+uint32_t globalHistoryReg = 0; // always initialize the global history register to be filled with "not taken" history
+
+
 
 //------------------------------------//
 //        Predictor Functions         //
@@ -50,6 +53,14 @@ init_predictor()
   //
   //TODO: Initialize Branch Predictor Data Structures
   //
+  switch(bpType) {
+    case GSHARE:
+      
+    case TOURNAMENT:
+    case CUSTOM:
+    default:
+      break;
+  }
 }
 
 // Make a prediction for conditional branch instruction at PC 'pc'
@@ -88,4 +99,11 @@ train_predictor(uint32_t pc, uint8_t outcome)
   //
   //TODO: Implement Predictor training
   //
+  switch(bpType) {
+    case GSHARE:
+    case TOURNAMENT:
+    case CUSTOM:
+    default:
+      break;
+  }
 }
